@@ -27,7 +27,7 @@ def getNumberPOIs(m):
 
 
 def get_data(seperate):
-    inputfile = 'C:\\Users\\Yannick\\Desktop\\Memoire\\Datasets\\mdcdb\\processed_Ids\\user_id_staypoints.csv'
+    inputfile = 'Path\\user_id_staypoints.csv'
     ifile = open(inputfile, "rU")
     reader = csv.reader(ifile, delimiter=",")
 
