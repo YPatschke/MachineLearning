@@ -182,7 +182,7 @@ for i in range(0, num_user):
     plt.xlabel('Epoch')
     plt.title('User: '+str(i)+' - Loss by epoch')
     plt.axis([0, np.amax(plotEpoch), 0, np.amax(plotLossTest[i])])
-    plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Loss.png')
+    plt.savefig('Path/Logistic/user'+str(i)+'Loss.png')
     plt.show()
 
     plt.plot(plotEpoch, plotAccuracyTrain[i], 'r-', label="Train")
@@ -193,7 +193,7 @@ for i in range(0, num_user):
     plt.xlabel('Epoch')
     plt.title('User: '+str(i)+' - Accuracy by epoch')
     plt.axis([0, np.amax(plotEpoch), 0, 1])
-    plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Accuracy.png')
+    plt.savefig('Path/Logistic/user'+str(i)+'Accuracy.png')
     plt.show()
     bestAccuracy.append(np.amax(plotAccuracyTest[i]))
 
