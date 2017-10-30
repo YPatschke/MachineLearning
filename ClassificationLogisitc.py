@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import csv
 import tensorflow as tf
 
-import loadData as ld
+import loadData3 as ld
 
 # separate data between train and test - Need input, output, train size (percentage) and if we want to shuffle
 def split(X, t, train_size, shuffle):
@@ -52,20 +52,20 @@ def simple_data_iterator(X, t, batch_size, num_epochs, shuffle):
             yield X[i], t[i], epoch+1, k+1
 
 # logisitc model run
-def runLogisitc(user, input, output, learning_rate, batch_size, display_step, num_epoch, display_epoch, num_input, train_size):
+def runLogisitc(user, input, output, learning_rate, batch_size, display_step, num_epoch, display_epoch, num_input, num_classes, train_size, timestep):
 
     # split data
-    train_input, train_output, test_input, test_output, num_examples = split(input, output, train_size, True)
+    train_input, train_output, test_input, test_output, num_examples = split(input, output, train_size, False)
 
     # tf Graph Input
     X = tf.placeholder(tf.float32, [None, num_input]) # mnist data image of shape 28*28=784
-    Y = tf.placeholder(tf.float32, [None, num_input]) # 0-9 digits recognition => 10 classes
+    Y = tf.placeholder(tf.float32, [None, num_classes]) # 0-9 digits recognition => 10 classes
 
     # set model weights
-    W = tf.Variable(tf.zeros([num_input, num_input]))
-    b = tf.Variable(tf.zeros([num_input]))
+    W = tf.Variable(tf.zeros([num_input, num_classes]))
+    b = tf.Variable(tf.zeros([num_classes]))
 
-    # construct a linear model
+    # construct a model
     pred = tf.nn.softmax(tf.matmul(X, W) + b) # Softmax
 
     # minimize error using cross entropy
@@ -97,6 +97,8 @@ def runLogisitc(user, input, output, learning_rate, batch_size, display_step, nu
         plotLossTestUser=[]
         plotAccuracyTrainUser=[]
         plotAccuracyTestUser=[]
+        plotAccuracyTrainUser2=[]
+        plotAccuracyTestUser2=[]
         avg_cost = 0.
         # training cycle
         # train in batch for a specified number of epochs
@@ -112,7 +114,7 @@ def runLogisitc(user, input, output, learning_rate, batch_size, display_step, nu
 
             # print some information (on the actual batch or all data) when we want
             if((epoch % display_epoch == 0 or epoch == 1) and (step % display_step == 0 or step == num_steps)):
-                print("User: "+str(user)+", Epoch:", '%04d' % (epoch), "cost=", "{:.9f}".format(avg_cost))
+                print("Timeste: "+str(timestep)+", User: "+str(user)+", Epoch:", '%04d' % (epoch), "Step= " + str(step), "cost=", "{:.9f}".format(avg_cost))
 
                 pred_test = sess.run(pred, feed_dict={X:batch_x})
                 rnd_id = np.random.randint(0, batch_x.shape[0])
@@ -128,75 +130,131 @@ def runLogisitc(user, input, output, learning_rate, batch_size, display_step, nu
             if(step==num_steps):
                 plotLossTrainUser.append(sess.run(cost, feed_dict={X: train_input, Y: train_output}))
                 plotLossTestUser.append(sess.run(cost, feed_dict={X: test_input, Y: test_output}))
-                plotAccuracyTrainUser.append(accuracy.eval({X: train_input,Y: train_output}))
-                plotAccuracyTestUser.append(accuracy.eval({X: test_input,Y: test_output}))
+                plotAccuracyTrainUser.append(sess.run(accuracy, feed_dict={X: train_input,Y: train_output}))
+                plotAccuracyTestUser.append(sess.run(accuracy, feed_dict={X: test_input,Y: test_output}))
+
+            if(epoch<3):
+                plotAccuracyTrainUser2.append(sess.run(accuracy, feed_dict={X: train_input,Y: train_output}))
+                plotAccuracyTestUser2.append(sess.run(accuracy, feed_dict={X: test_input,Y: test_output}))
 
         # final accuracy
         print("Optimization Finished!")
         print("Accuracy:", accuracy.eval({X: test_input, Y: test_output}))
 
-    return plotLossTrainUser, plotLossTestUser, plotAccuracyTrainUser, plotAccuracyTestUser
+    return plotLossTrainUser, plotLossTestUser, plotAccuracyTrainUser, plotAccuracyTestUser, plotAccuracyTrainUser2, plotAccuracyTestUser2, num_steps
 
-# get data
-input, output, number, numberOfPOIs = ld.get_data(False)
+timestep= 5
+plotAccuracyTestAll=[]
+for j in range(1,timestep+1):
+    # get data
+    input, output, number, numberOfPOIs = ld.get_data(True, j)
 
-# variables for stock loss and accuracy at different epoch
-plotLossTrain=[]
-plotLossTest=[]
-plotAccuracyTrain=[]
-plotAccuracyTest=[]
+    # variables for stock loss and accuracy at different epoch
+    plotLossTrain=[]
+    plotLossTest=[]
+    plotAccuracyTrain=[]
+    plotAccuracyTest=[]
+    plotAccuracyTrain2=[]
+    plotAccuracyTest2=[]
+    num_stepsTotal=[]
 
-# Parameters
-learning_rate = 0.0001
-batch_size = 25
-display_step = 1000000
-num_epoch = 100
-display_epoch = 1
-train_size = 0.7
-num_user = 1 # number of user to procces
+    # Parameters
+    learning_rate = 0.0001
+    batch_size = 20
+    display_step = 100000
+    num_epoch = 1000
+    display_epoch = 500
+    train_size = 0.7
+    num_user = 150 # number of user to procces
 
-# network parameters
-num_input = numberOfPOIs # same vector for all user based and all POIs
-num_classes = numberOfPOIs # same vector for all user based and all POIs
+    # network parameters
+    num_input = numberOfPOIs*j # same vector for all user based and all POIs
+    num_classes = numberOfPOIs # same vector for all user based and all POIs
 
-# for each user wanted we procced a linear model and stock loss and accuracy
-for i in range(0,num_user):
-    plotLossTrainUser, plotLossTestUser, plotAccuracyTrainUser, plotAccuracyTestUser = runLogisitc(i, input[i], output[i], learning_rate, batch_size, display_step, num_epoch, display_epoch, num_input, train_size)
-    plotLossTrain.append(plotLossTrainUser)
-    plotLossTest.append(plotLossTestUser)
-    plotAccuracyTrain.append(plotAccuracyTrainUser)
-    plotAccuracyTest.append(plotAccuracyTestUser)
+    # for each user wanted we procced a linear model and stock loss and accuracy
+    for i in range(0,num_user):
+        plotLossTrainUser, plotLossTestUser, plotAccuracyTrainUser, plotAccuracyTestUser, plotAccuracyTrainUser2, plotAccuracyTestUser2, num_stepsUser = runLogisitc(i, input[i], output[i], learning_rate, batch_size, display_step, num_epoch, display_epoch, num_input, num_classes, train_size, j)
+        plotLossTrain.append(plotLossTrainUser)
+        plotLossTest.append(plotLossTestUser)
+        plotAccuracyTrain.append(plotAccuracyTrainUser)
+        plotAccuracyTest.append(plotAccuracyTestUser)
+        plotAccuracyTrain2.append(plotAccuracyTrainUser2)
+        plotAccuracyTest2.append(plotAccuracyTestUser2)
+        num_stepsTotal.append(num_stepsUser)
 
-# represent the results
-bestAccuracy=[]
-plotEpoch = []
-for i in range(1,num_epoch+1):
-    plotEpoch.append(i)
-# for each user wanted we plot a graph for Loss/epoch and Accurac/Epoch
+    # represent the results
+    bestAccuracy=[]
+    plotEpoch = []
+    for i in range(1,num_epoch+1):
+        plotEpoch.append(i)
+    # for each user wanted we plot a graph for Loss/epoch and Accurac/Epoch
+    for i in range(0, num_user):
+        fig = plt.figure()
+        plt.plot(plotEpoch, plotLossTrain[i], 'r-', label="Train")
+        plt.plot(plotEpoch, plotLossTest[i], 'b-', label="Test")
+        plt.plot((0, np.amax(plotEpoch)), (np.amin(plotLossTest[i]), np.amin(plotLossTest[i])), 'g-', label="Best")
+        plt.legend(loc='best')
+        plt.ylabel('Loss')
+        plt.xlabel('Epoch')
+        plt.title('User: '+str(i)+' Timestep: '+str(j)+' - Loss by epoch')
+        plt.axis([0, np.amax(plotEpoch), 0, np.amax(plotLossTest[i])])
+        plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Timestep'+str(j)+'Loss.png')
+        plt.close(fig)
+
+        fig = plt.figure()
+        plt.plot(plotEpoch, plotAccuracyTrain[i], 'r-', label="Train")
+        plt.plot(plotEpoch, plotAccuracyTest[i], 'b-', label="Test")
+        plt.plot((0, np.amax(plotEpoch)), (np.amax(plotAccuracyTest[i]), np.amax(plotAccuracyTest[i])), 'g-', label="Best")
+        plt.legend(loc='best')
+        plt.ylabel('Accuracy')
+        plt.xlabel('Epoch')
+        plt.title('User: '+str(i)+' Timestep: '+str(j)+' - Accuracy by epoch')
+        plt.axis([0, np.amax(plotEpoch), 0, 1])
+        plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Timestep'+str(j)+'Accuracy.png')
+        plt.close(fig)
+
+        """plotStep = []
+        for n in range(1,num_stepsTotal[i]*2+1):
+            plotStep.append(n)
+
+        fig = plt.figure()
+        plt.plot(plotStep, plotAccuracyTrain2[i], 'r-', label="Train")
+        plt.plot(plotStep, plotAccuracyTest2[i], 'b-', label="Test")
+        plt.plot((0, np.amax(plotStep)), (np.amax(plotAccuracyTest2[i]), np.amax(plotAccuracyTest2[i])), 'g-', label="Best")
+        plt.legend(loc='best')
+        plt.ylabel('Accuracy')
+        plt.xlabel('Step')
+        plt.title('User: '+str(i)+' Timestep: '+str(j)+' - Accuracy by step')
+        plt.axis([0, np.amax(plotStep), 0, 1])
+        plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Timestep'+str(j)+'AccuracyStep.png')
+        plt.close(fig)"""
+
+        bestAccuracy.append(np.amax(plotAccuracyTest[i]))
+        if(i==num_user-1):
+            plotAccuracyTestAll.append(bestAccuracy)
+
+    # only the worst and best accuracy between all users tested
+    print("Best: "+str(np.amax(bestAccuracy)))
+    print("Worst: "+str(np.amin(bestAccuracy)))
+
+finalAccuracyByTimestep=[]
+print(plotAccuracyTestAll)
+print(plotAccuracyTestAll[0])
 for i in range(0, num_user):
-    plt.plot(plotEpoch, plotLossTrain[i], 'r-', label="Train")
-    plt.plot(plotEpoch, plotLossTest[i], 'b-', label="Test")
-    plt.plot((0, np.amax(plotEpoch)), (np.amin(plotLossTest[i]), np.amin(plotLossTest[i])), 'g-', label="Best")
-    plt.legend(loc='best')
-    plt.ylabel('Loss')
-    plt.xlabel('Epoch')
-    plt.title('User: '+str(i)+' - Loss by epoch')
-    plt.axis([0, np.amax(plotEpoch), 0, np.amax(plotLossTest[i])])
-    plt.savefig('Path/Logistic/user'+str(i)+'Loss.png')
-    plt.show()
+    col=[]
+    for j in range(0,timestep):
+        col.append(plotAccuracyTestAll[j][i])
+    finalAccuracyByTimestep.append(col)
 
-    plt.plot(plotEpoch, plotAccuracyTrain[i], 'r-', label="Train")
-    plt.plot(plotEpoch, plotAccuracyTest[i], 'b-', label="Test")
-    plt.plot((0, np.amax(plotEpoch)), (np.amax(plotAccuracyTest[i]), np.amax(plotAccuracyTest[i])), 'g-', label="Best")
+    plotTimestep=[]
+    for t in range(1,timestep+1):
+        plotTimestep.append(t)
+    fig = plt.figure()
+    plt.plot(plotTimestep, finalAccuracyByTimestep[i], 'b-', label="Test")
     plt.legend(loc='best')
     plt.ylabel('Accuracy')
-    plt.xlabel('Epoch')
-    plt.title('User: '+str(i)+' - Accuracy by epoch')
-    plt.axis([0, np.amax(plotEpoch), 0, 1])
-    plt.savefig('Path/Logistic/user'+str(i)+'Accuracy.png')
-    plt.show()
-    bestAccuracy.append(np.amax(plotAccuracyTest[i]))
-
-# only the worst and best accuracy between all users tested
-print("Best: "+str(np.amax(bestAccuracy)))
-print("Worst: "+str(np.amin(bestAccuracy)))
+    plt.xlabel('Timestep')
+    plt.title('User: '+str(i)+' - Accuracy by timestep')
+    plt.axis([1, timestep, 0, 1])
+    plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Accuracy2.png')
+    plt.close(fig)
