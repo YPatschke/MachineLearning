@@ -198,7 +198,7 @@ for j in range(1,timestep+1):
         plt.xlabel('Epoch')
         plt.title('User: '+str(i)+' Timestep: '+str(j)+' - Loss by epoch')
         plt.axis([0, np.amax(plotEpoch), 0, np.amax(plotLossTest[i])])
-        plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Timestep'+str(j)+'Loss.png')
+        plt.savefig('Path/Logistic/user'+str(i)+'Timestep'+str(j)+'Loss.png')
         plt.close(fig)
 
         fig = plt.figure()
@@ -210,7 +210,7 @@ for j in range(1,timestep+1):
         plt.xlabel('Epoch')
         plt.title('User: '+str(i)+' Timestep: '+str(j)+' - Accuracy by epoch')
         plt.axis([0, np.amax(plotEpoch), 0, 1])
-        plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Timestep'+str(j)+'Accuracy.png')
+        plt.savefig('Path/Logistic/user'+str(i)+'Timestep'+str(j)+'Accuracy.png')
         plt.close(fig)
 
         """plotStep = []
@@ -226,7 +226,7 @@ for j in range(1,timestep+1):
         plt.xlabel('Step')
         plt.title('User: '+str(i)+' Timestep: '+str(j)+' - Accuracy by step')
         plt.axis([0, np.amax(plotStep), 0, 1])
-        plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Timestep'+str(j)+'AccuracyStep.png')
+        plt.savefig('Path/Logistic/user'+str(i)+'Timestep'+str(j)+'AccuracyStep.png')
         plt.close(fig)"""
 
         bestAccuracy.append(np.amax(plotAccuracyTest[i]))
@@ -256,5 +256,5 @@ for i in range(0, num_user):
     plt.xlabel('Timestep')
     plt.title('User: '+str(i)+' - Accuracy by timestep')
     plt.axis([1, timestep, 0, 1])
-    plt.savefig('C:/Users/Yannick/Desktop/Image1/Logistic/user'+str(i)+'Accuracy2.png')
+    plt.savefig('Path/Logistic/user'+str(i)+'Accuracy2.png')
     plt.close(fig)
