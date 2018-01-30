@@ -1,0 +1,2 @@
+model_checkpoint_path: "C:/Users/Yannick/Desktop/finalTest/LSTM/H1N20T5/Save/U4H1N20T5Model.ckpt"
+all_model_checkpoint_paths: "C:/Users/Yannick/Desktop/finalTest/LSTM/H1N20T5/Save/U4H1N20T5Model.ckpt"
