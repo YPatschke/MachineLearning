@@ -1,0 +1,2 @@
+model_checkpoint_path: "U24H5N20T5Model.ckpt"
+all_model_checkpoint_paths: "U24H5N20T5Model.ckpt"
