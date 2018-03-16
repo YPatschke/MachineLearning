@@ -1,0 +1,42 @@
+\select@language {english}
+\contentsline {figure}{\numberline {1}{\ignorespaces Sample of Linear Regression - Height vs Weight \cite {brownlee2}\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {2}{\ignorespaces Distance to square of a Linear Regression \cite {wikipedia}\relax }}{9}{figure.caption.6}
+\contentsline {figure}{\numberline {3}{\ignorespaces Logistic Population Growth \cite {angela}\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {4}{\ignorespaces Sample of a Neural Network (with 3 features, 4 neurons on one hidden layer and 2 results possible \cite {wikipedia2}\relax }}{10}{figure.caption.8}
+\contentsline {figure}{\numberline {5}{\ignorespaces A Neural Network with weights \cite {raschka}\relax }}{11}{figure.caption.10}
+\contentsline {figure}{\numberline {6}{\ignorespaces A Neural Network with feed forward and back propagation \cite {buranajun2007prediction}\relax }}{11}{figure.caption.10}
+\contentsline {figure}{\numberline {7}{\ignorespaces A Recurrent Neural Network \cite {olah2015understanding}\relax }}{12}{figure.caption.12}
+\contentsline {figure}{\numberline {8}{\ignorespaces Simple RNN \cite {olah2015understanding}\relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {9}{\ignorespaces RNN-LSTM \cite {olah2015understanding}\relax }}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {10}{\ignorespaces Tensorflow website \cite {tensorflow}\relax }}{13}{figure.caption.16}
+\contentsline {figure}{\numberline {11}{\ignorespaces Some python code with Tensorflow on a multi-layers RNN-LSTM\relax }}{13}{figure.caption.16}
+\contentsline {figure}{\numberline {12}{\ignorespaces Plots \cite {cesium} from EEG time series dataset \cite {andrzejak2001indications}\relax }}{13}{figure.caption.18}
+\contentsline {figure}{\numberline {13}{\ignorespaces Python code with Cesium to extract some selected features from a time series \cite {cesium}\relax }}{13}{figure.caption.18}
+\contentsline {figure}{\numberline {14}{\ignorespaces Dataset where each row represents the movements of one user between POIs\relax }}{14}{figure.caption.20}
+\contentsline {figure}{\numberline {15}{\ignorespaces Linear Regression model: True movement vs Prediction with 1 timestep and parameters from table \ref {table:predBasic}\relax }}{19}{figure.caption.27}
+\contentsline {figure}{\numberline {16}{\ignorespaces Linear Regression model: True movement vs Prediction with 5 timestep and from table \ref {table:predBasic}\relax }}{19}{figure.caption.27}
+\contentsline {figure}{\numberline {17}{\ignorespaces Logistic Regression model: True movement vs Prediction with 1 timestep and parameters from table \ref {table:predBasic}\relax }}{20}{figure.caption.30}
+\contentsline {figure}{\numberline {18}{\ignorespaces Logistic Regression model: True movement vs Prediction with 5 timestep and parameters from table \ref {table:predBasic}\relax }}{20}{figure.caption.30}
+\contentsline {figure}{\numberline {19}{\ignorespaces Neural Network model: True movement vs Prediction with 1 timestep and parameters from table \ref {table:predComplex}\relax }}{21}{figure.caption.33}
+\contentsline {figure}{\numberline {20}{\ignorespaces Neural Network model: True movement vs Prediction with 5 timestep and parameters from table \ref {table:predComplex}\relax }}{21}{figure.caption.33}
+\contentsline {figure}{\numberline {21}{\ignorespaces RNN-LSTM model: True movement vs Prediction with 1 timestep and parameters from table \ref {table:predComplex}\relax }}{21}{figure.caption.35}
+\contentsline {figure}{\numberline {22}{\ignorespaces RNN-LSTM model: True movement vs Prediction with 5 timestep and parameters from table \ref {table:predComplex}\relax }}{21}{figure.caption.35}
+\contentsline {figure}{\numberline {23}{\ignorespaces True movement vs Prediction (1 hidden layer)\relax }}{25}{figure.caption.40}
+\contentsline {figure}{\numberline {24}{\ignorespaces True movement vs Prediction (5 hidden layers)\relax }}{25}{figure.caption.40}
+\contentsline {figure}{\numberline {25}{\ignorespaces True movement vs Prediction (10 hidden layers)\relax }}{25}{figure.caption.40}
+\contentsline {figure}{\numberline {26}{\ignorespaces True movement vs Prediction with 10 neurons\relax }}{26}{figure.caption.43}
+\contentsline {figure}{\numberline {27}{\ignorespaces True movement vs Prediction with 50 neurons\relax }}{26}{figure.caption.43}
+\contentsline {figure}{\numberline {28}{\ignorespaces True movement vs Prediction with 100 neurons\relax }}{26}{figure.caption.43}
+\contentsline {figure}{\numberline {29}{\ignorespaces True movement vs Prediction with 1 timestep\relax }}{27}{figure.caption.46}
+\contentsline {figure}{\numberline {30}{\ignorespaces True movement vs Prediction with 5 timesteps\relax }}{27}{figure.caption.46}
+\contentsline {figure}{\numberline {31}{\ignorespaces True movement vs Prediction with 10 timestep\relax }}{27}{figure.caption.46}
+\contentsline {figure}{\numberline {32}{\ignorespaces Trajectory generated with Random Generator\relax }}{30}{figure.caption.53}
+\contentsline {figure}{\numberline {33}{\ignorespaces Trajectory generated with Best Probability Generator\relax }}{30}{figure.caption.53}
+\contentsline {figure}{\numberline {34}{\ignorespaces Trajectory generated with Random Choice Probability Generator\relax }}{30}{figure.caption.53}
+\contentsline {figure}{\numberline {35}{\ignorespaces Random Generated Trajectory vs Real Trajectory\relax }}{30}{figure.caption.55}
+\contentsline {figure}{\numberline {36}{\ignorespaces Best Probability Generated Trajectory vs Real Trajectory\relax }}{30}{figure.caption.55}
+\contentsline {figure}{\numberline {37}{\ignorespaces Random Choice Probability Generated Trajectory vs Real Trajectory\relax }}{30}{figure.caption.55}
+\contentsline {figure}{\numberline {38}{\ignorespaces Best Probability Generator with less than 100 steps\relax }}{31}{figure.caption.56}
+\contentsline {figure}{\numberline {39}{\ignorespaces Random Choice Probability Generator with less than 100 steps\relax }}{31}{figure.caption.56}
+\contentsline {figure}{\numberline {40}{\ignorespaces Best Probability Generator with 500 steps generated\relax }}{32}{figure.caption.58}
+\contentsline {figure}{\numberline {41}{\ignorespaces Random Choice Probability Generator with 500 steps generated\relax }}{32}{figure.caption.58}

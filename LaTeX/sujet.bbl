@@ -1,0 +1,151 @@
+\begin{thebibliography}{10}
+
+\bibitem{andrzejak2001indications}
+Ralph~G Andrzejak, Klaus Lehnertz, Florian Mormann, Christoph Rieke, Peter
+  David, and Christian~E Elger.
+\newblock Indications of nonlinear deterministic and finite-dimensional
+  structures in time series of brain electrical activity: Dependence on
+  recording region and brain state.
+\newblock {\em Physical Review E}, 64(6):061907, 2001.
+
+\bibitem{biomo2014enhanced}
+Jean-Daniel Medjo~Me Biomo, Thomas Kunz, and Marc St-Hilaire.
+\newblock An enhanced gauss-markov mobility model for simulations of unmanned
+  aerial ad hoc networks.
+\newblock In {\em Wireless and Mobile Networking Conference (WMNC), 2014 7th
+  IFIP}, pages 1--8. IEEE, 2014.
+
+\bibitem{brownlee2}
+Jason Brownlee.
+\newblock Linear regression for machine learning.
+\newblock
+  https://machinelearningmastery.com/linear-regression-for-machine-learning/,
+  2016.
+\newblock Consulted 05.01.2018.
+
+\bibitem{brownlee3}
+Jason Brownlee.
+\newblock Logistic regression for machine learning, 2016.
+
+\bibitem{buranajun2007prediction}
+Prathana Buranajun, Montalee Sasananan, and Setta Sasananan.
+\newblock Prediction of product design and development success using artificial
+  neural network.
+\newblock 2007.
+
+\bibitem{cesium}
+Cesium.
+\newblock Machine learning time-series platform.
+\newblock http://cesium-ml.org/docs/index.html.
+\newblock Consulted 05.01.2018.
+
+\bibitem{ghosh2017modeling}
+Shreya Ghosh and Soumya~K Ghosh.
+\newblock Modeling of human movement behavioral knowledge from gps traces for
+  categorizing mobile users.
+\newblock In {\em Proceedings of the 26th International Conference on World
+  Wide Web Companion}, pages 51--58. International World Wide Web Conferences
+  Steering Committee, 2017.
+
+\bibitem{humphries2010environmental}
+Nicolas~E Humphries, Nuno Queiroz, Jennifer~RM Dyer, Nicolas~G Pade, Michael~K
+  Musyl, Kurt~M Schaefer, Daniel~W Fuller, Juerg~M Brunnschweiler, Thomas~K
+  Doyle, Jonathan~DR Houghton, et~al.
+\newblock Environmental context explains l{\'e}vy and brownian movement
+  patterns of marine predators.
+\newblock {\em Nature}, 465(7301):1066--1069, 2010.
+
+\bibitem{jiang2009characterizing}
+Bin Jiang, Junjun Yin, and Sijian Zhao.
+\newblock Characterizing the human mobility pattern in a large street network.
+\newblock {\em Physical Review E}, 80(2):021136, 2009.
+
+\bibitem{karpathy2016unreasonable}
+A~Karpathy.
+\newblock The unreasonable effectiveness of recurrent neural networks, 2015.
+\newblock {\em Dispon{\i}vel em http://karpathy. github.
+  io/2015/05/21/rnn-effectiveness}, 2016.
+
+\bibitem{kim2006extracting}
+Minkyong Kim, David Kotz, and Songkuk Kim.
+\newblock Extracting a mobility model from real user traces.
+\newblock In {\em INFOCOM 2006. 25th IEEE International Conference on Computer
+  Communications. Proceedings}, pages 1--13. IEEE, 2006.
+
+\bibitem{kulkarni}
+Vaibhav Kulkarni and Benoît Garbinato.
+\newblock Generating synthetic mobility traffic using rnns, 2017.
+
+\bibitem{olah2015understanding}
+Christopher Olah.
+\newblock Understanding lstm networks.
+\newblock {\em GITHUB blog, posted on August}, 27:2015, 2015.
+
+\bibitem{raschka}
+Sebastian Raschka.
+\newblock What is the role of the activation function in a neural network?
+\newblock
+  https://www.kdnuggets.com/2016/08/role-activation-function-neural-network.html,
+  2016.
+\newblock Consulted 05.01.2018.
+
+\bibitem{scipy2}
+Scipy.
+\newblock Numpy.unique.
+\newblock
+  https://docs.scipy.org/doc/numpy-1.13.0/reference/generated/numpy.unique.html.
+\newblock Consulted 05.01.2018.
+
+\bibitem{scipy}
+Scipy.
+\newblock scipy.stats.pearsonr.
+\newblock
+  https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.pearsonr.html.
+\newblock Consulted 05.01.2018.
+
+\bibitem{angela}
+Angela~L. Swafford.
+\newblock Logistic population growth: Equation, definition \& graph.
+\newblock
+  https://study.com/academy/lesson/logistic-population-growth-equation-definition-graph.html.
+\newblock Consulted 05.01.2018.
+
+\bibitem{technitis}
+Georgios Technitis and Robert Weibel.
+\newblock An algorithm for random trajectory generation between two endpoints,
+  honoring time and speed constraints, 2014.
+
+\bibitem{tensorflow}
+Tensorflow.
+\newblock An open-source software library for machine intelligence.
+\newblock https://www.tensorflow.org/.
+\newblock Consulted 05.01.2018.
+
+\bibitem{varangaonkar}
+Amey Varangaonkar.
+\newblock Top 10 deep learning frameworks.
+\newblock
+  https://datahub.packtpub.com/deep-learning/top-10-deep-learning-frameworks/,
+  2017.
+\newblock Consulted 05.01.2018.
+
+\bibitem{wikipedia}
+Wikipedia.
+\newblock Wikipedia the free encyclopedia.
+\newblock https://en.wikipedia.org/wiki/Linear\_regression.
+\newblock Consulted 05.01.2018.
+
+\bibitem{wikipedia2}
+Wikipedia.
+\newblock Wikipedia the free encyclopedia.
+\newblock https://en.wikipedia.org/wiki/Artificial\_neural\_network.
+\newblock Consulted 05.01.2018.
+
+\bibitem{woodford}
+Chris Woodford.
+\newblock Neural networks.
+\newblock http://www.explainthatstuff.com/introduction-to-neural-networks.html,
+  2017.
+\newblock Consulted 05.01.2018.
+
+\end{thebibliography}

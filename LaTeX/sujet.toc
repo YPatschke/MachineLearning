@@ -1,0 +1,44 @@
+\select@language {english}
+\contentsline {section}{Acknowledgements}{5}{section*.3}
+\contentsline {section}{\numberline {1}Introduction}{6}{section.1}
+\contentsline {section}{\numberline {2}Motivation}{7}{section.2}
+\contentsline {section}{\numberline {3}Background}{8}{section.3}
+\contentsline {subsection}{Machine Learning}{8}{section*.4}
+\contentsline {subsubsection}{Linear Regression}{9}{section*.5}
+\contentsline {subsubsection}{Logistic Regression}{10}{section*.7}
+\contentsline {subsubsection}{Neural Network}{10}{section*.9}
+\contentsline {subsubsection}{Recurrent Neural Network}{12}{section*.11}
+\contentsline {subsubsection}{Recurrent Neural Network - Long Short-term Memory}{12}{section*.13}
+\contentsline {subsection}{Tensorflow}{13}{section*.15}
+\contentsline {subsection}{Cesium}{14}{section*.17}
+\contentsline {subsection}{Dataset}{14}{section*.19}
+\contentsline {section}{\numberline {4}Related Work}{16}{section.4}
+\contentsline {section}{\numberline {5}Methodology}{17}{section.5}
+\contentsline {subsection}{Prediction}{17}{section*.21}
+\contentsline {subsection}{Optimization}{17}{section*.22}
+\contentsline {subsection}{Generation}{17}{section*.23}
+\contentsline {section}{\numberline {6}Prediction}{18}{section.6}
+\contentsline {subsection}{Data Pre-processing}{18}{section*.24}
+\contentsline {subsection}{Prediction Performance}{18}{section*.25}
+\contentsline {subsubsection}{Linear Regression}{19}{section*.26}
+\contentsline {subsubsection}{Logistic Regression}{20}{section*.29}
+\contentsline {subsubsection}{Neural Network}{20}{section*.31}
+\contentsline {subsubsection}{Recurrent Neural Netwok - Long Short-term Memory}{21}{section*.34}
+\contentsline {subsection}{Overview and Comparison}{22}{section*.36}
+\contentsline {section}{\numberline {7}Optimization}{23}{section.7}
+\contentsline {subsection}{Hyperparameter Tuning}{23}{section*.37}
+\contentsline {subsubsection}{Hidden layer(s)}{25}{section*.39}
+\contentsline {subsubsection}{Neurons}{26}{section*.42}
+\contentsline {subsubsection}{Timesteps}{27}{section*.45}
+\contentsline {subsection}{Overview and Observation}{28}{section*.48}
+\contentsline {section}{\numberline {8}Generation}{29}{section.8}
+\contentsline {subsection}{Random Generator}{29}{section*.50}
+\contentsline {subsection}{Best Probability Generator}{29}{section*.51}
+\contentsline {subsection}{Random Choice Probability Generator}{29}{section*.52}
+\contentsline {subsection}{Performance and Comparison}{30}{section*.54}
+\contentsline {section}{\numberline {9}Discussion}{34}{section.9}
+\contentsline {section}{\numberline {10}Conclusion}{35}{section.10}
+\contentsline {section}{\numberline {11}References}{36}{section.11}
+\contentsline {section}{List of Figures}{38}{section*.60}
+\contentsline {section}{List of Tables}{40}{section*.61}
+\contentsline {section}{\numberline {A}\\Software, libraries and tools used}{41}{appendix.A}

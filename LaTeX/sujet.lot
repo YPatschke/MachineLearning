@@ -1,0 +1,10 @@
+\select@language {english}
+\contentsline {table}{\numberline {1}{\ignorespaces Settings of simple models during prediction\relax }}{19}{table.caption.28}
+\contentsline {table}{\numberline {2}{\ignorespaces Settings of complex models during prediction\relax }}{20}{table.caption.32}
+\contentsline {table}{\numberline {3}{\ignorespaces Basic settings during optimization\relax }}{24}{table.caption.38}
+\contentsline {table}{\numberline {4}{\ignorespaces Some measures from different number of hidden layers and true movement\relax }}{25}{table.caption.41}
+\contentsline {table}{\numberline {5}{\ignorespaces Some measures from different number of neurons and true movement\relax }}{26}{table.caption.44}
+\contentsline {table}{\numberline {6}{\ignorespaces Some measures from different number of timesteps and true movement\relax }}{27}{table.caption.47}
+\contentsline {table}{\numberline {7}{\ignorespaces Best parameters found\relax }}{28}{table.caption.49}
+\contentsline {table}{\numberline {8}{\ignorespaces Some measures extracted from the synthetical trajectories of the different generators\relax }}{31}{table.caption.57}
+\contentsline {table}{\numberline {9}{\ignorespaces Some measures extracted from the synthetical trajectories of the different generators (500 steps)\relax }}{32}{table.caption.59}
